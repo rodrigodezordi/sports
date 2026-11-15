@@ -23,6 +23,7 @@ setuptools.setup(
     install_requires=[
         "supervision",
         "numpy",
+        "pandas",
         "opencv-python",
         "transformers",
         "umap-learn",
