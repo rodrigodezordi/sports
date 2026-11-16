@@ -10,7 +10,8 @@ tático) e gera dados para o app **Soccer Scouting**.
 1. Abra [`notebooks/soccer_scouting.ipynb`](notebooks/soccer_scouting.ipynb) no Colab
    (*Arquivo → Abrir notebook → GitHub*, e cole `rodrigodezordi/sports`).
 2. **Ambiente de execução → Alterar o tipo de ambiente de execução → T4 GPU**.
-3. Em 🔑 *Secrets*, crie `ROBOFLOW_API_KEY` com a sua *Private API Key* da Roboflow.
+3. Não precisa de chave: os modelos YOLOv8 do `roboflow/sports` são baixados uma vez para
+   `MyDrive/football-ai/modelos` e rodam com PyTorch na GPU (meia precisão).
 4. Rode a célula 1 e **espere terminar** (3 a 5 min). Se todas as bibliotecas aparecerem
    como "ok", vá em *Reiniciar sessão* e rode da célula 2 em diante.
 
