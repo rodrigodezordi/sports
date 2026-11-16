@@ -14,8 +14,19 @@ tático) e gera dados para o app **Soccer Scouting**.
 4. Rode a célula 1 e **espere terminar** (3 a 5 min). Se todas as bibliotecas aparecerem
    como "ok", vá em *Reiniciar sessão* e rode da célula 2 em diante.
 
-Toda vez que o Colab abre uma máquina nova (depois de um tempo parado, ou ao trocar
-para GPU), a instalação e o vídeo enviado se perdem: rode a partir da célula 1 de novo.
+**Deixe o vídeo no Google Drive** (célula 2, `USAR_DRIVE = True`). A análise é feita em
+blocos de 1 minuto, e cada bloco pronto fica salvo em `MyDrive/football-ai/resultados/<jogo>/blocos`.
+Se a conexão cair, rode as células 1 a 5 de novo: os blocos prontos são pulados e a
+análise continua de onde parou, com os mesmos uniformes (`times.pkl`).
+
+### Velocidade (célula 3)
+
+| ajuste | padrão | efeito |
+|---|---|---|
+| `PULAR_QUADROS` | 2 | analisa 1 a cada 2 quadros (30 → 15 por segundo) |
+| `CALIBRAR_A_CADA` | 5 | recalcula as linhas do campo a cada 5 quadros analisados |
+| `CLASSIFICAR_ID_VEZES` | 5 | olha o uniforme de cada jogador só nas primeiras 5 vezes |
+| `GERAR_VIDEO` | True | `False` gera só os dados, sem o vídeo marcado (mais rápido) |
 
 ## O que o notebook gera
 
