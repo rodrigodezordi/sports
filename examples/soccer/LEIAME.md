@@ -20,14 +20,21 @@ blocos de 1 minuto, e cada bloco pronto fica salvo em `MyDrive/football-ai/resul
 Se a conexão cair, rode as células 1 a 5 de novo: os blocos prontos são pulados e a
 análise continua de onde parou, com os mesmos uniformes (`times.pkl`).
 
-### Velocidade (célula 3)
+### Qualidade, velocidade e direção do campo (célula 3)
 
-| ajuste | padrão | efeito |
-|---|---|---|
-| `PULAR_QUADROS` | 2 | analisa 1 a cada 2 quadros (30 → 15 por segundo) |
-| `CALIBRAR_A_CADA` | 5 | recalcula as linhas do campo a cada 5 quadros analisados |
-| `CLASSIFICAR_ID_VEZES` | 5 | olha o uniforme de cada jogador só nas primeiras 5 vezes |
-| `GERAR_VIDEO` | True | `False` gera só os dados, sem o vídeo marcado (mais rápido) |
+O padrão é a qualidade máxima. Para ficar cerca de 4x mais rápido, use os valores da coluna "rápido".
+
+| ajuste | padrão | rápido | efeito |
+|---|---|---|---|
+| `PULAR_QUADROS` | 1 | 2 | analisa todos os quadros, ou 1 a cada 2 |
+| `CALIBRAR_A_CADA` | 1 | 5 | de quantos em quantos quadros recalcula as linhas do campo |
+| `CLASSIFICAR_ID_VEZES` | 1000 | 5 | quantas vezes olha o uniforme de cada jogador antes de fixar o time |
+| `QUALIDADE_VIDEO` | 20 | 23 | nitidez do vídeo marcado (H.264; menor = mais nítido) |
+| `GERAR_VIDEO` | True | False | `False` gera só os dados, sem o vídeo marcado |
+| `INVERTER_LADOS` | True | | troca esquerda e direita no radar e nos dados |
+| `INVERTER_CIMA_BAIXO` | False | | troca as laterais de cima e de baixo |
+
+Ao mudar qualquer ajuste, troque também o `NOME_JOGO`: os blocos já prontos de um nome são reaproveitados.
 
 ## O que o notebook gera
 
