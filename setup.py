@@ -21,7 +21,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=[
-        "supervision",
+        "supervision>=0.26,<0.31",  # 0.31 removeu o ByteTrack
         "numpy",
         "pandas",
         "opencv-python",
