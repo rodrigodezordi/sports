@@ -15,7 +15,7 @@ tático) e gera dados para o app **Soccer Scouting**.
 4. Rode a célula 1 e **espere terminar** (3 a 5 min). Se todas as bibliotecas aparecerem
    como "ok", vá em *Reiniciar sessão* e rode da célula 2 em diante.
 
-**Deixe o vídeo no Google Drive** (célula 2, `USAR_DRIVE = True`). A análise é feita em
+**O vídeo pode vir do seu computador:** na célula 2 aparece o botão *Escolher arquivos*, e o vídeo enviado é guardado em `MyDrive/football-ai/videos`. Para reusar um vídeo que já está lá, escreva o nome dele em `NOME_VIDEO`. A análise é feita em
 blocos de 1 minuto, e cada bloco pronto fica salvo em `MyDrive/football-ai/resultados/<jogo>/blocos`.
 Se a conexão cair, rode as células 1 a 5 de novo: os blocos prontos são pulados e a
 análise continua de onde parou, com os mesmos uniformes (`times.pkl`).
