@@ -50,11 +50,11 @@ Ao mudar qualquer ajuste, troque também o `NOME_JOGO`: os blocos já prontos de
 | ajuste | padrão | efeito |
 |---|---|---|
 | `CALIBRACAO` | `"camera_fixa"` | usa a calibração da câmera do campo de treino (`calibracao/campo_treino.json`) e acompanha quando ela gira ou dá zoom. `"modelo"` volta ao modelo de linhas do tutorial, que só funciona com imagem de TV |
-| `COMPRIMENTO_M`, `LARGURA_M` | `None` | medidas reais do campo. Sem elas, vale a estimativa da calibração (~103 × 73 m) |
+| `COMPRIMENTO_M`, `LARGURA_M` | `105`, `68` | medidas do campo (padrão oficial). Se mudar, o notebook refaz a calibração com as novas medidas. `None` usa a estimativa feita pela imagem |
 | `TIMES_POR` | `"cor"` | separa os times pela cor da camisa. `"siglip"` é o método do tutorial, que mistura os times quando os jogadores aparecem pequenos |
 | `TEM_ARBITRO` | True | `False` faz quem o modelo marcar como árbitro virar jogador |
 
-**Outra câmera:** marque alguns pontos das linhas (lateral de perto, linha do meio, círculo central e, se der, a grande área) num quadro do vídeo, como em `calibracao/pontos_campo_treino.json`, e rode `python calibracao/calibrar.py pontos.json quadro.png minha_camera.json`. Depois aponte `ARQ_CALIBRACAO` para o arquivo novo.
+**Outra câmera:** marque alguns pontos das linhas (lateral de perto, linha do meio, círculo central e, se der, a grande área) num quadro do vídeo, como em `calibracao/pontos_campo_treino.json`, e rode `python calibracao/calibrar.py pontos.json quadro.png minha_camera.json`. Use `--comprimento` e `--largura` se souber as medidas daquele campo. Depois aponte `ARQ_CALIBRACAO` para o arquivo novo e ajuste `COMPRIMENTO_M` e `LARGURA_M`.
 
 ## O que este fork acrescenta à biblioteca
 
@@ -81,5 +81,6 @@ Ao mudar qualquer ajuste, troque também o `NOME_JOGO`: os blocos já prontos de
   (`notebooks/train_ball_detector.ipynb`).
 - **IDs ≠ nomes:** o rastreador dá números, e eles podem trocar quando jogadores se
   cruzam.
-- **Medidas do campo:** a calibração estima ~103 × 73 m pelo círculo central e pela grande área.
-  Com as medidas reais em `COMPRIMENTO_M` e `LARGURA_M`, distâncias e velocidades ficam certas.
+- **Medidas do campo:** a câmera do treino está calibrada com o padrão oficial, 105 × 68 m.
+  Se o campo real for diferente, distâncias e velocidades saem proporcionalmente erradas:
+  coloque as medidas certas em `COMPRIMENTO_M` e `LARGURA_M`.
