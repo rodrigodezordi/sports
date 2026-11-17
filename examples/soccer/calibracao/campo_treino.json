@@ -1,0 +1,31 @@
+{
+ "descricao": "Câmera fixa na lateral do campo de treino (vídeo de teste de 17/11/2026). Pontos marcados no 1º quadro do vídeo.",
+ "imagem": "campo_treino.jpg",
+ "comprimento_m": 103.0,
+ "largura_m": 72.9,
+ "homografia_px_para_cm": [
+  [
+   -2.2716727996770953,
+   -20.856927398197932,
+   6923.1223876328595
+  ],
+  [
+   -0.10637557010615147,
+   -32.6349480520379,
+   10952.505297129113
+  ],
+  [
+   -7.491998603244517e-06,
+   -0.0037499803840434207,
+   1.0
+  ]
+ ],
+ "ignorar_px": [
+  [
+   50,
+   330,
+   170,
+   400
+  ]
+ ]
+}
